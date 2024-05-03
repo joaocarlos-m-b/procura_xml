@@ -1,11 +1,31 @@
 import flet as ft
 from nfecopier import NFeCopier
 
+# main.py
+import flet as ft
+from nfecopier import NFeCopier
+
 def main(page: ft.Page):
     page.title = "Procurador de XMLs"
-    
-
     copier = NFeCopier("", "", "")  # Inicializa com strings vazias
+
+    def show_alert_dialog():
+        dialog = ft.AlertDialog(
+            title="Processo Concluído",
+            content=ft.Text("Processo concluído. Verifique o log para notas não encontradas."),
+            actions=[
+                ft.TextButton(
+                    content=ft.Text("OK"),
+                    on_click=lambda _: dialog.close()
+                )
+            ]
+        )
+        page.dialog = dialog
+        dialog.open()
+
+    copier.on_complete = show_alert_dialog  # Define o callback
+
+
 
     # Criando instâncias de FilePicker
     pick_files_dialog = ft.FilePicker()
