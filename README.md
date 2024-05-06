@@ -1,9 +1,15 @@
-# A procura_xml Flet app
+# Projeto Flet - Gerenciamento de XMLs
 
-An example of a minimal Flet app.
+Este é um projeto Python que utiliza o Flet para construir uma interface gráfica que gerencia XMLs de notas fiscais eletrônicas (NF-e). Este projeto facilita a seleção, a cópia e o gerenciamento de arquivos XML de notas fiscais.
 
-To run the app:
+## Preparação
 
-```
-flet run [app_directory]
-```
+### 1. Instalar Dependências
+
+Antes de começar, é importante garantir que todas as dependências do projeto estejam instaladas. Para instalar as dependências, execute o seguinte comando:
+
+```bash
+
+pip freeze | Out-File -FilePath requirements.txt -Encoding UTF8
+
+pip install -r requirements.txt

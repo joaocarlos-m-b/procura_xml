@@ -7,7 +7,7 @@ class NFeCopier:
         self.excel_path = excel_path
         self.source_directory = source_directory
         self.destination_directory = destination_directory
-        self.on_complete:callable = None  # Callback para quando a cópia for concluída
+        
 
     def load_data(self):
         self.df = pd.read_excel(self.excel_path)
@@ -50,8 +50,7 @@ class NFeCopier:
                         log_file.write(f"{chave}\n")
 
         print("Processo concluído. Verifique o log para notas não encontradas.")
-        if self.on_complete:
-            self.on_complete()  # Chama o callback quando o processo estiver concluído
+        
 
 
         
