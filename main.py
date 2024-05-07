@@ -94,13 +94,9 @@ def main(page: ft.Page):
         pick_files_dialog,
         pick_source_directory_dialog,
         pick_destination_directory_dialog
-    ])
+    ])   
 
-    containers = [ft.Container(
-        expand=True,
-        content=ft.Column(
-            controls=[
-                ft.Row([
+    page.add(ft.Row([
                     ft.ElevatedButton(
                         text="Arquivo Excel",
                         icon=ft.icons.FILE_UPLOAD,
@@ -130,20 +126,6 @@ def main(page: ft.Page):
                         icon=ft.icons.SEARCH,
                         on_click=executar_copia
                     ),
-                ]),
-            ],
-        ),
-    ),
-    ft.Container(
-        
-        expand=True,
-        image_src='assets/images/modelo.png',     
-        
-        ),
-    
-    
-    ]
-
-    page.add(*containers)
+                ]),)
 
 ft.app(target=main, assets_dir='assets')
