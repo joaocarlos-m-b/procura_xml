@@ -7,10 +7,15 @@ class NFeCopier:
         self.excel_path = excel_path
         self.source_directory = source_directory
         self.destination_directory = destination_directory
-        
+    
 
     def load_data(self):
-        self.df = pd.read_excel(self.excel_path)
+        ext = os.path.splitext(self.excel_path)[1].lower()
+        if ext == ".xls":
+            self.df = pd.read_excel(self.excel_path, engine="xlrd")
+        else:
+            self.df = pd.read_excel(self.excel_path, engine="openpyxl")
+
 
     def copy_files(self):        
         not_found_keys = {}  # Dicionário para armazenar chaves não encontradas, agrupadas por local
