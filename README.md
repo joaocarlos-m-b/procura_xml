@@ -13,3 +13,12 @@ Antes de começar, é importante garantir que todas as dependências do projeto 
 pip freeze | Out-File -FilePath requirements.txt -Encoding UTF8
 
 pip install -r requirements.txt
+
+```
+### 2. Gerar o EXE
+
+```bash
+
+pyinstaller --onefile --noconsole --icon=icone.ico --add-data "assets;assets" main.py
+
+```
