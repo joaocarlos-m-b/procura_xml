@@ -31,7 +31,7 @@ class NFeCopier:
 
             for root, dirs, files in os.walk(self.source_directory):                
                 for file in files:
-                    if chave_nfe in file and file.endswith('.xml'):
+                    if chave_nfe in file and (file.endswith('-nfe.xml') or file.endswith('-cte.xml') or file.endswith('-mdfe.xml')):
                         found = True
                         src_file_path = os.path.join(root, file)
                         dest_file_path = os.path.join(full_dest_path, file)
